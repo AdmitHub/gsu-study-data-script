@@ -1,0 +1,13 @@
+### Nodejs
+node_modules
+npm-debug.log
+
+### Project
+*.conf.js
+conf.js
+
+### OSX
+*.DS_Store
+
+##output file
+lindsay-gsu.csv
