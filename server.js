@@ -41,12 +41,12 @@ return new Promise(function(resolve, reject) {
   })
 }).then((aiMatcherDb)=> {
   MatcherLogs = aiMatcherDb.collection('queryLogs');
-  return BrandedUserProfiles.find({studyGroupMember: true, entryYear: 2016, abGroup: {"$lt": .01}}).toArray();
+  return BrandedUserProfiles.find({studyGroupMember: true, entryYear: 2016}).toArray();
 }).then((brandedUsers)=> {
   return brandedUsers.reduce(function(p, singleUser) {
     let statArray;
     let studentObj = {};
-    studentObj.UserId = singleUser.userId;
+    studentObj.PantherId = singleUser.enrollmentId;
     return p 
     .then((_statArray)=> {
       statArray = _statArray;
